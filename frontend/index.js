@@ -8,7 +8,7 @@ const calcTime = (timestamp) => {
   if (hour > 0) return `${hour}시간 전`;
   else if (minute > 0) return `${minute}분 전`;
   else if (second > 0) return `${second}초 전`;
-  else "방금전";
+  else return "방금전";
 };
 
 const renderData = (data) => {
@@ -22,7 +22,7 @@ const renderData = (data) => {
 
     const img = document.createElement("img");
     const res = await fetch(`/image/${obj.id}`);
-    const blob = a wait res.blob();
+    const blob = await res.blob();
     const url = URL.createObjectURL(blob);
     img.src = url;
 
